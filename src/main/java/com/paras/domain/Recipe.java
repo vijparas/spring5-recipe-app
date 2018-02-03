@@ -1,5 +1,7 @@
 package com.paras.domain;
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -21,6 +23,8 @@ public class Recipe {
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
 
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "recipe")
+    private Set<Ingredients> ingredients;
     public Long getId() {
         return id;
     }
@@ -99,5 +103,13 @@ public class Recipe {
 
     public void setNotes(Notes notes) {
         this.notes = notes;
+    }
+
+    public Set<Ingredients> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Set<Ingredients> ingredients) {
+        this.ingredients = ingredients;
     }
 }
