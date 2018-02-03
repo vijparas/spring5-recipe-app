@@ -13,6 +13,9 @@ public class Ingredients {
     @ManyToOne
     private Recipe recipe;
 
+    @OneToOne
+    private UnitOfMeasure unitOfMeasure;
+
     public String getDescription() {
         return description;
     }
@@ -35,5 +38,21 @@ public class Ingredients {
 
     public void setRecipe(Recipe recipe) {
         this.recipe = recipe;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public UnitOfMeasure getUnitOfMeasure() {
+        return unitOfMeasure;
+    }
+
+    public void setUnitOfMeasure(UnitOfMeasure unitOfMeasure) {
+        this.unitOfMeasure = unitOfMeasure;
     }
 }
