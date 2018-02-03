@@ -2,7 +2,8 @@ package com.paras.domain;
 
 
 import javax.persistence.*;
-
+import java.util.Set;
+@Entity
 public class Notes {
 
     @Id
@@ -13,6 +14,8 @@ public class Notes {
     //Using Lob Annotation to allow Hibernate to bypass defauly 255 length of java and allow storing text with
     @Lob
     private String recipeNotes;
+
+
 
     public Long getId() {
         return id;
@@ -37,4 +40,6 @@ public class Notes {
     public void setRecipeNotes(String recipeNotes) {
         this.recipeNotes = recipeNotes;
     }
+
+
 }
