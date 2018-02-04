@@ -10,6 +10,14 @@ public class Ingredients {
     private Long id;
     private String description;
     private BigDecimal amount;
+
+    public Ingredients(String description, BigDecimal amount,  UnitOfMeasure unitOfMeasure,Recipe recipe) {
+        this.description = description;
+        this.amount = amount;
+        this.recipe = recipe;
+        this.unitOfMeasure = unitOfMeasure;
+    }
+
     @ManyToOne
     private Recipe recipe;
 
