@@ -4,7 +4,7 @@ import com.paras.repositories.CategoryRepository;
 import com.paras.repositories.UnitOfMeasureRepository;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.ApplicationListener;
-import com.paras.repositories.RecipeRpository;
+import com.paras.repositories.RecipeRepository;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -13,9 +13,9 @@ import java.util.*;
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
     private final CategoryRepository categoryRepository;
-    private final RecipeRpository recipeRepository;
+    private final RecipeRepository recipeRepository;
     private final UnitOfMeasureRepository unitOfMeasureRepository;
-    public RecipeBootstrap(CategoryRepository categoryRepository, RecipeRpository recipeRepository, UnitOfMeasureRepository unitOfMeasureRepository) {
+    public RecipeBootstrap(CategoryRepository categoryRepository, RecipeRepository recipeRepository, UnitOfMeasureRepository unitOfMeasureRepository) {
         this.categoryRepository = categoryRepository;
         this.recipeRepository = recipeRepository;
         this.unitOfMeasureRepository = unitOfMeasureRepository;
