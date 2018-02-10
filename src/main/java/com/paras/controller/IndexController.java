@@ -22,7 +22,9 @@
         private UnitOfMeasureRepository unitOfMeasureRepository;
         @Autowired
         private RecipeService recipeService;
-
+        IndexController(RecipeService recipeService){
+            this.recipeService=recipeService;
+        }
         @RequestMapping({"/","index"})
         public String index(Model model){
             Set<Recipe> recipeSet=recipeService.getRecipes();
