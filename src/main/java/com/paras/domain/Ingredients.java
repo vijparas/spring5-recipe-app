@@ -18,6 +18,7 @@ public class Ingredients {
         this.unitOfMeasure = unitOfMeasure;
     }
 
+    public Ingredients(){}
     @ManyToOne
     private Recipe recipe;
 
